@@ -400,7 +400,7 @@ namespace PokeApiNet
         /// <summary>
         /// Handles all outbound API requests to the PokeAPI server and deserializes the response
         /// </summary>
-        private async Task<T> GetAsync<T>(string url, CancellationToken cancellationToken)
+        protected virtual async Task<T> GetAsync<T>(string url, CancellationToken cancellationToken)
         {
             using var request = new HttpRequestMessage(HttpMethod.Get, url);
             using var response = await _client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
@@ -412,7 +412,7 @@ namespace PokeApiNet
         /// <summary>
         /// Handles deserialization of a given stream to a given type
         /// </summary>
-        private T DeserializeStream<T>(System.IO.Stream stream)
+        protected T DeserializeStream<T>(System.IO.Stream stream)
         {
             using var sr = new System.IO.StreamReader(stream);
             using JsonReader reader = new JsonTextReader(sr);

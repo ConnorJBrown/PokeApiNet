@@ -1,5 +1,30 @@
 # Changelog
 
+## 3.0.9
+### Fix
+ - Add support for endpoints respecting case sensitivity for named parameters: [#39](https://github.com/mtrdp642/PokeApiNet/pull/39)
+
+## 3.0.8
+### Added
+- Made property `PokemonSpecies.CaptureRate` and `PokemonSpecies.BaseHappiness` nullable
+
+## 3.0.7
+### Added
+- Made property `Pokemon.BaseExperience` nullable: [#37](https://github.com/mtrdp642/PokeApiNet/pull/37)
+
+## 3.0.6
+This is the same release as 3.0.5. Use 3.0.7 instead.
+
+## 3.0.5
+### Added
+- Updated `Pokemon` model to include new properties for historical and alternate form sprites: [#33](https://github.com/mtrdp642/PokeApiNet/pull/33)
+
+## 3.0.4
+### Fix
+- Ensure HTTP responses are only processed after the content of the request has been read, instead of just the headers: [#29](https://github.com/mtrdp642/PokeApiNet/issues/29)
+- Updated dependencies
+- Bump test project to .Net 6.0
+
 ## 3.0.3
 ### Added
 - Updated `Pokemon` model to include new property: `past_types`
